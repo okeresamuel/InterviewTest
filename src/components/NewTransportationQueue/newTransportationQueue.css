@@ -1,0 +1,20 @@
+.input__container{
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    transform: translate(-50%, -50%);
+    width: 60%;
+}
+input{
+    padding: 10px;
+    border-radius: 6px;
+}
+button{
+    background-color: rgb(19, 126, 197);
+    color:white;
+    border:none;
+    border-radius:2px;
+    
+}

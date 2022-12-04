@@ -1,0 +1,29 @@
+.queue__TabeHeader{
+    display:flex;
+    justify-content: space-between;
+    border:1px solid ;
+  }
+  
+  
+  .transportQueue{
+    width: 50%;
+    border: 1px solid;
+    cursor: grab;
+  }
+  
+  .transportQueue__container{
+      display: flex;
+      justify-content: space-evenly;
+      text-align: center;
+  
+  }
+  
+  .id,.name,.pick__upLocation,.Drop__offLocation{
+      margin-left: 5px;
+      width: 24%;
+      text-align: center;
+  }
+
+  .planner__container{
+    padding-right: 20px;
+}
