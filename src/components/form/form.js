@@ -1,30 +1,27 @@
-import "../NewTransportationQueue/newTransportationQueue.css"
+import "../form/form.css"
 import {useEffect, useState} from  "react"
 import {useDispatch} from "react-redux"
 import {post__transport, get__transport} from "../features/Transport/transportQueueActions"
 
-function NewTransportationQueue() {
+function Form() {
   const formFields = {
     username: "",
     pickUpLocation:"",
     dropLocation: ""
   }
 
+  //controlled form fields
   const [form,  setformFields] = useState(formFields)
   const {username, pickUpLocation, dropLocation} = form
-
    const Handlechange = (e) =>{
    const {name, value} = e.target
    setformFields({...form , [name]:value})
   }
 
-  
-
   const dispatch = useDispatch() 
   useEffect(()=>{
     dispatch(get__transport())
   },[])
-
 
   const SubmitForm = () =>{
    if(!username || !pickUpLocation || !dropLocation){
@@ -35,20 +32,22 @@ function NewTransportationQueue() {
         Pick_UP_Location:pickUpLocation,
         Drop_Off_Location: dropLocation
        }
-   dispatch(post__transport(data))
+    dispatch(post__transport(data))
    }
   }
 
   return (
     <>
    <div className='input__container'>
+   <form>
    <input placeholder='Name' name="username" value={username} onChange={((e)=>{Handlechange(e)})} ></input>
    <input placeholder='Pick Up Location' name="pickUpLocation" value={pickUpLocation} onChange={((e)=>{Handlechange(e)})} ></input>
    <input placeholder='Drop Location' name="dropLocation" value={dropLocation} onChange={((e)=>{Handlechange(e)})} ></input>
    <button onClick={(()=>{SubmitForm()})} >Add A New queue</button>
+   </form>
    </div>
-   </>
+    </>
   )
 }
 
-export default NewTransportationQueue
+export default Form;

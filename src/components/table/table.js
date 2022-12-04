@@ -1,15 +1,29 @@
-import Form from "../NewTransportationQueue/newTransportationQueue"
 import "../table/table.css"
 import {useSelector} from "react-redux"
 import TransportRow from "../TransportRow/transportRow"
+import {useEffect, useState} from  "react"
+import {useDispatch} from "react-redux"
+import {get__transport} from "../features/Transport/transportQueueActions"
+import Form from "../form/form"
+
 
 function Table() {
 const {TransportQueue} = useSelector((state)=> state.transport )
 
 
+
+  const dispatch = useDispatch() 
+  useEffect(()=>{
+    dispatch(get__transport())
+  },[dispatch])
+
+
+
   return (
     <>
-    <Form/>
+  
+  <Form />
+
     <div className='General__Table'>
     <div className="planner__section">
     <h1 className="planner__text">Planner</h1>

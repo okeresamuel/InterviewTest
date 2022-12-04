@@ -7,9 +7,10 @@
     transform: translate(-50%, -50%);
     width: 60%;
 }
-input{
+input, button{
     padding: 10px;
     border-radius: 6px;
+    margin: 3px;
 }
 button{
     background-color: rgb(19, 126, 197);
@@ -17,4 +18,12 @@ button{
     border:none;
     border-radius:2px;
     
+}
+
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -18px;
 }
