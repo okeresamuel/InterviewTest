@@ -1,8 +1,8 @@
 const express = require("express")
 const router = express.Router()
-const {get__TransportQueue, post__TransportQueue} = require("../controllers/TransportationQueue")
+const {get__TransportQueue, post__TransportQueue} = require("../controllers/TransportQueue")
 
-router.get("/", get__TransportQueue)
-router.post("/", post__TransportQueue)
+router.post("/App", post__TransportQueue)
+router.get("/App", get__TransportQueue)
 
 module.exports = router;
