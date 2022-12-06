@@ -8,7 +8,7 @@ const post__TransportQueue = async(req, res)=>{
     savedData ? res.status(200).json(savedData) : res.status(301).json("creation was unsuccessfull")
   }
 
-//  sql get post
+//  sql get data
  const get__TransportQueue =  async(req, res)=>{;
   const foundData = await TransportQueue.findAll()
   foundData ? res.status(200).json(foundData) : res.json("no data found")
